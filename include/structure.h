@@ -16,6 +16,7 @@ typedef struct
     /* Matrix [DIM][Q]: 2 rows, 9 cols */
     int velocities_by_dim[D2Q9_DIM][D2Q9_Q];
 
+    // Not necessaty with BGK.
     int opposite[D2Q9_Q];
 
 } Structure;
