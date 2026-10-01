@@ -25,8 +25,8 @@ void lattice_collide(Lattice *lattice); // wrapper per equilibrium_collision
 
 void lattice_stream(Lattice *lattice); // wrapper per streaming
 
-void lattice_swap_buffers(Lattice *lattice); // update the distribution function with the new value.
+void lattice_save_csv(Lattice *lattice, char *filename);
 
-void lattice_apply_boundaries(Lattice *lattice, float u_lid); // wrapper per
+// void lattice_apply_boundaries(Lattice *lattice, float u_lid); // wrapper per
 
 #endif
