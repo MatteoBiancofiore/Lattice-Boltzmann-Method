@@ -11,10 +11,10 @@ typedef struct
     float weights[D2Q9_Q]; /* 9 weights (1 per velocity) */
 
     /* Matrix [Q][DIM]: 9 rows, 2 cols */
-    int velocities_by_dir[D2Q9_Q][D2Q9_DIM];
+    float velocities_by_dir[D2Q9_Q][D2Q9_DIM];
 
     /* Matrix [DIM][Q]: 2 rows, 9 cols */
-    int velocities_by_dim[D2Q9_DIM][D2Q9_Q];
+    float velocities_by_dim[D2Q9_DIM][D2Q9_Q];
 
     // Not necessaty with BGK.
     int opposite[D2Q9_Q];

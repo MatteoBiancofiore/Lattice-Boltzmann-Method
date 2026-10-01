@@ -5,7 +5,8 @@
 #include <math.h>
 #include "structure.h"
 
-typedef struct {
+typedef struct
+{
   // macroscopic density.
   float rho;
 
@@ -21,19 +22,16 @@ typedef struct {
   bool is_obstacle;
 } Node;
 
+void node_init(Node *node, const int position[D2Q9_DIM], const int boundary[D2Q9_DIM], bool is_obstacle);
 
-Node* node_init(const int position[D2Q9_DIM], const int boundary[D2Q9_DIM], bool is_obstacle);
+void node_update_macro(Node *node, const Structure *structure);
 
-void node_update_macro(Node* node, const Structure *structure);
+void equilibrium_collision(Node *node, const Structure *structure, float omega);
 
-void equilibrium_collision(Node* node, const Structure *structure);
-
-void init_eq(Node* node, const Strucure *structure, const int problem_type);
-
-
+void init_eq(Node *node, const Structure *structure, const int problem_type);
 
 // utils
-float scalarProduct(const float a[], const float b[], int size);
-float scalarProduct(const float a[], const float b[], const float c[], int size);
+float scalarProduct_2(const float a[], const float b[]);
+float scalarProduct_3(const float a[], const float b[], const float c[]);
 
 #endif // !NODE_H
